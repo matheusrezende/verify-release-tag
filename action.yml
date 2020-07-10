@@ -1,0 +1,12 @@
+name: 'Validate release tags'
+author: 'Matheus Rezende'
+description: 'Validate release/pre-release tags'
+inputs:
+  prerelease:
+    description: 'Tag is prerelease'
+    required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.prerelease }}
